@@ -1,0 +1,18 @@
+<div id="hangman-game">
+  <!-- Word Display -->
+  <div id="word-display">
+    <input id="word-box" type="text" readonly value="" placeholder="Click on letters" />
+  </div>
+
+  <!-- Keyboard -->
+  <div id="keyboard">
+    <%= for letter <- ?A..?Z do %>
+      <button
+        class="keyboard-key"
+        phx-click="guess"
+        phx-value-letter={<<letter>>}>
+        <%= <<letter>> %>
+      </button>
+    <% end %>
+  </div>
+</div>
